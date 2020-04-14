@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionarios</title>
+</head>
+<body>
+    <h1>Cadastro</h1>
+<form th:action="@{/cadastro}" method="POST"> <!--Enviando requisição para o controler-->
+    <input type="text"name="cpf"placeholder="cpf" required> 
+    <input type="text"name="nome">
+    <input type="text"name="setor">
+    <input type="text"name="idade">
+    <input type="submit" value="Cadastrar">
+</form>
+    <h1>Lista de funcionarios</h1>
+
+    <table> 
+        <td>MATRICULA</td>
+        <td style="text-align: center;">CPF</td>
+        <td style="text-align: center;">NOME</td>
+        <td style="text-align: center;">SETOR</td>
+        <td style="text-align: center;">IDADE</td>
+        <tr th:each="funcionario: ${funcionarios}">
+           
+            <td style="text-align: center;" th:text="${funcionario.matricula}"></td>
+            <td style="text-align: center;" th:text="${funcionario.cpf}"></td>
+            <td style="text-align: center;" th:text="${funcionario.nome}"></td>
+            <td style="text-align: center;" th:text="${funcionario.setor}"></td>
+            <td style="text-align: center;" th:text="${funcionario.idade}"></td>
+
+        </tr>
+    </table>
+</body>
+</html>
