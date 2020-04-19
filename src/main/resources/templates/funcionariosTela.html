@@ -8,16 +8,16 @@
 <body>
     <h1>Cadastro</h1>
 <form th:action="@{/cadastro}" method="POST"> <!--Enviando requisição para o controler-->
-    <input type="text"name="cpf"placeholder="cpf" required> 
-    <input type="text"name="nome">
-    <input type="text"name="setor">
-    <input type="text"name="idade">
+    <input type="text"name="cpf"placeholder="CPF" required>  <!--required não permite cadastro com campos em branco-->
+    <input type="text"name="nome"placeholder="NOME" required>
+    <input type="text"name="setor"placeholder="SETOR" required>
+    <input type="text"name="idade"placeholder="IDADE" required>
     <input type="submit" value="Cadastrar">
 </form>
     <h1>Lista de funcionarios</h1>
 
     <table> 
-        <td>MATRICULA</td>
+        <td>MATRICULA</td> 
         <td style="text-align: center;">CPF</td>
         <td style="text-align: center;">NOME</td>
         <td style="text-align: center;">SETOR</td>
